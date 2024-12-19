@@ -56,7 +56,15 @@ describe('Homepage', () => {
         cy.get('#txtPhoneNumber').type('07034697295')
         cy.get('#btnContinue').click()
       })
-       
-
-
+      it('Verify that the Quick start continue button shows the default browser validation message when  fields are empty', ()=>{
+         // Assert that an error message is shown for the username field
+         cy.get('input[name="txtPhoneNumber"]').clear(); 
+         cy.get('input[name= "btnContinue"]').click()
+         cy.get('input[name="txtPhoneNumber"]')
+         .should('have.prop', 'validationMessage')
+         .and('not.be.empty');
+  
+        
+          });
+         
 })
