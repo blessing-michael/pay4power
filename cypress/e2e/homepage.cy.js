@@ -52,6 +52,11 @@ describe('Homepage', () => {
       it('should have a working "Merchant" page',()=>{
         cy.contains('Do you Want to register?').should('be.visible').click()
       })
+      it('Verify "Quick Start using phone number functionality" is working', ()=>{
+        cy.get('#txtPhoneNumber').type('07034697295')
+        cy.get('#btnContinue').click()
+      })
+       
 
 
 })
