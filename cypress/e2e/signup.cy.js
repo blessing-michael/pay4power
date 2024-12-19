@@ -8,7 +8,7 @@ describe('Signup page',()=>{
         cy.get('a > .btn').click()
 
     })
-    it('visit url', ()=>{
+    it('verify registering an account by providing valid details in all fields', ()=>{
         
         cy.get('#txtFullname').type('bless michael ')
         cy.get('#txtPhoneNumber').type('07034697295')
@@ -33,6 +33,23 @@ describe('Signup page',()=>{
     
     
     })
+   it('should show an error for invalid email forma', ()=>{
+    cy.get('#txtFullname').type('bless michael ') 
+    cy.get('#txtPhoneNumber').type('07034697295')
+    cy.get('#txtEmail').type('asuquoe13@')
+    cy.get('#chkIAgree').click()
+    cy.get('#btnAdd').click()
+    //Assert that the browser shows an error message
+    cy.get('#RegularExpressionValidator1')
+    .should('be.visible')
+    .and('contain.text', 'Invalid Email');
+});
+
+   
+
+
+
+   
 
 
 })
