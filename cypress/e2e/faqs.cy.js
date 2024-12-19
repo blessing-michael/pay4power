@@ -35,6 +35,14 @@ describe('FAQ Page Tests', () => {
       
     });
 
+    it('should display all answers when clicking the "expand all" button', () => {
+      cy.visit('https://pay4power.com/default.aspx'); // Update with the actual URL path of the FAQ page
+      cy.get(':nth-child(4) > .dropdown-toggle').click()
+      // Assuming there is an "expand all" button
+    
+    
+    
+    });
      
 
       
