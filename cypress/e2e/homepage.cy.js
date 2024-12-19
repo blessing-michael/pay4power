@@ -33,5 +33,25 @@ describe('Homepage', () => {
         cy.contains('Contact Us').should('be.visible').click();
       
       });
+      it('should have a working "Support" button', ()=>{
+        //Check if the "support" page button is clickable
+        cy.contains('Support').should('be.visible').click()
+      })
+      it('should have a working "About" button', ()=>{
+        cy.contains('FAQs').should('be.visible').click()
+      })
+      it('should have a working "Merchant" page', ()=>{
+        cy.contains('Merchant').should('be.visible').click()
+      })
+      it('should have a working "Merchant" page', ()=>{
+        cy.contains('Buy Electricity').should('be.visible').click()
+      })
+      it('should have a working "login and sign up" page', ()=>{
+        cy.contains('Sign Up / Login').should('be.visible').click()
+      })
+      it('should have a working "Merchant" page',()=>{
+        cy.contains('Do you Want to register?').should('be.visible').click()
+      })
+
 
 })
